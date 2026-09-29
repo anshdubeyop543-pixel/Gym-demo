@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Body Fox Gym & Wellness</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#0b0b0b;
+    color:#fff;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* NAVBAR */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#0b0b0b;
+    border-bottom:1px solid #222;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:#ff5a1f;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#ddd;
+    font-size:14px;
+}
+
+.nav-links a:hover{
+    color:#ff5a1f;
+}
+
+.menu{
+    display:none;
+    font-size:25px;
+}
+
+/* HERO */
+
+.hero{
+    min-height:90vh;
+    padding:100px 7%;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.95),rgba(0,0,0,.65),rgba(0,0,0,.85)),
+    linear-gradient(135deg,#242424,#111);
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.small-title{
+    color:#ff5a1f;
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:4px;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:clamp(48px,8vw,88px);
+    line-height:1;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#ff5a1f;
+}
+
+.hero p{
+    color:#ccc;
+    max-width:600px;
+    font-size:17px;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 25px;
+    background:#ff5a1f;
+    color:white;
+    font-weight:bold;
+    border-radius:4px;
+    margin-right:10px;
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    background:#e94d15;
+}
+
+.btn-outline{
+    background:transparent;
+    border:1px solid #555;
+}
+
+/* GENERAL */
+
+section{
+    padding:80px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title .small-title{
+    margin-bottom:8px;
+}
+
+.section-title h2{
+    font-size:42px;
+    text-transform:uppercase;
+}
+
+.section-title p{
+    color:#999;
+    margin-top:10px;
+}
+
+/* STATS */
+
+.stats{
+    background:#151515;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    text-align:center;
+}
+
+.stat{
+    padding:30px 10px;
+    border-right:1px solid #292929;
+}
+
+.stat h3{
+    color:#ff5a1f;
+    font-size:38px;
+}
+
+.stat p{
+    color:#aaa;
+}
+
+/* SERVICES */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.service{
+    background:#151515;
+    padding:30px;
+    border:1px solid #242424;
+    border-radius:8px;
+    transition:.2s;
+}
+
+.service:hover{
+    transform:translateY(-5px);
+    border-color:#ff5a1f;
+}
+
+.icon{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.service h3{
+    margin-bottom:10px;
+    font-size:22px;
+}
+
+.service p{
+    color:#999;
+}
+
+/* MEMBERSHIP */
+
+.memberships{
+    background:#111;
+}
+
+.plans{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.plan{
+    background:#181818;
+    border:1px solid #292929;
+    padding:35px;
+    border-radius:8px;
+    text-align:center;
+}
+
+.plan.featured{
+    border:2px solid #ff5a1f;
+    transform:scale(1.03);
+}
+
+.plan h3{
+    font-size:25px;
+}
+
+.price{
+    font-size:45px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.price span{
+    color:#999;
+    font-size:15px;
+}
+
+.plan ul{
+    list-style:none;
+    text-align:left;
+    margin:25px 0;
+}
+
+.plan li{
+    padding:8px 0;
+    color:#bbb;
+}
+
+.plan li::before{
+    content:"✓ ";
+    color:#ff5a1f;
+    font-weight:bold;
+}
+
+/* TRAINERS */
+
+.trainers{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.trainer{
+    background:#151515;
+    border-radius:8px;
+    overflow:hidden;
+    border:1px solid #242424;
+}
+
+.trainer-photo{
+    height:260px;
+    background:linear-gradient(135deg,#333,#171717);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:80px;
+}
+
+.trainer-info{
+    padding:22px;
+}
+
+.trainer-info h3{
+    font-size:22px;
+}
+
+.trainer-info p{
+    color:#999;
+}
+
+/* FACILITIES */
+
+.facilities{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.facility{
+    background:#151515;
+    padding:25px;
+    border-left:4px solid #ff5a1f;
+}
+
+.facility h3{
+    margin-bottom:5px;
+}
+
+.facility p{
+    color:#999;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.gallery-item{
+    height:190px;
+    background:linear-gradient(135deg,#3a3a3a,#171717);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:55px;
+    border-radius:7px;
+}
+
+/* ABOUT */
+
+.about{
+    background:#151515;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.about p{
+    color:#aaa;
+    margin-bottom:15px;
+}
+
+.check{
+    margin:10px 0;
+}
+
+.check span{
+    color:#ff5a1f;
+    margin-right:8px;
+}
+
+/* CONTACT */
+
+.contact{
+    background:#101010;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.contact-box{
+    background:#181818;
+    padding:30px;
+    border-radius:8px;
+}
+
+.contact-box h3{
+    margin-bottom:20px;
+}
+
+.contact-item{
+    margin:18px 0;
+}
+
+.contact-item strong{
+    display:block;
+    color:#ff5a1f;
+}
+
+.contact-item span{
+    color:#bbb;
+}
+
+/* FORM */
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    padding:14px;
+    background:#0d0d0d;
+    border:1px solid #333;
+    color:white;
+    border-radius:4px;
+}
+
+textarea{
+    height:120px;
+    resize:none;
+}
+
+button{
+    border:none;
+    cursor:pointer;
+    padding:15px;
+    background:#ff5a1f;
+    color:white;
+    font-weight:bold;
+    border-radius:4px;
+}
+
+/* FOOTER */
+
+footer{
+    padding:30px 7%;
+    text-align:center;
+    background:#080808;
+    color:#777;
+}
+
+footer strong{
+    color:#ff5a1f;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero{
+        min-height:80vh;
+        padding:70px 7%;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .services,
+    .plans,
+    .trainers{
+        grid-template-columns:1fr;
+    }
+
+    .plan.featured{
+        transform:none;
+    }
+
+    .facilities,
+    .about,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .section-title h2{
+        font-size:32px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+
+<div class="logo">
+THE <span>BODY FOX</span>
+</div>
+
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#membership">Membership</a></li>
+<li><a href="#trainers">Trainers</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<div class="menu">☰</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="small-title">
+GHAZIABAD'S FITNESS DESTINATION
+</div>
+
+<h1>
+BUILD YOUR<br>
+<span>STRONGEST</span><br>
+SELF.
+</h1>
+
+<p>
+Train harder. Get stronger. Feel better.
+Join The Body Fox Gym & Wellness and start your fitness journey with professional trainers, modern equipment and a motivating environment.
+</p>
+
+<a href="#membership" class="btn">
+VIEW MEMBERSHIPS
+</a>
+
+<a href="#contact" class="btn btn-outline">
+CONTACT US
+</a>
+
+</div>
+
+</section>
+
+
+<!-- STATS -->
+
+<section class="stats">
+
+<div class="stat">
+<h3>5+</h3>
+<p>Years Experience</p>
+</div>
+
+<div class="stat">
+<h3>1000+</h3>
+<p>Members</p>
+</div>
+
+<div class="stat">
+<h3>15+</h3>
+<p>Expert Trainers</p>
+</div>
+
+<div class="stat">
+<h3>24/7</h3>
+<p>Fitness Mindset</p>
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="section-title">
+
+<div class="small-title">
+WHAT WE OFFER
+</div>
+
+<h2>Our Services</h2>
+
+<p>
+Everything you need to reach your fitness goals.
+</p>
+
+</div>
+
+
+<div class="services">
+
+<div class="service">
+<div class="icon">🏋️</div>
+<h3>Strength Training</h3>
+<p>
+Build strength and muscle with professional equipment and structured workouts.
+</p>
+</div>
+
+<div class="service">
+<div class="icon">🔥</div>
+<h3>Fat Loss</h3>
+<p>
+Personalized training programs designed to help you improve fitness and body composition.
+</p>
+</div>
+
+<div class="service">
+<div class="icon">🥊</div>
+<h3>Functional Training</h3>
+<p>
+Improve mobility, endurance, balance and everyday strength.
+</p>
+</div>
+
+<div class="service">
+<div class="icon">🧘</div>
+<h3>Yoga & Mobility</h3>
+<p>
+Improve flexibility, mobility and recovery with guided sessions.
+</p>
+</div>
+
+<div class="service">
+<div class="icon">👤</div>
+<h3>Personal Training</h3>
+<p>
+One-on-one coaching with customized workout and fitness guidance.
+</p>
+</div>
+
+<div class="service">
+<div class="icon">❤️</div>
+<h3>Cardio Training</h3>
+<p>
+Improve stamina and cardiovascular fitness using modern cardio equipment.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MEMBERSHIPS -->
+
+<section class="memberships" id="membership">
+
+<div class="section-title">
+
+<div class="small-title">
+MEMBERSHIP PLANS
+</div>
+
+<h2>Choose Your Plan</h2>
+
+<p>
+Simple plans for every fitness goal.
+</p>
+
+</div>
+
+
+<div class="plans">
+
+<div class="plan">
+
+<h3>1 MONTH</h3>
+
+<div class="price">
+₹1,499 <span>/ month</span>
+</div>
+
+<ul>
+<li>Gym Access</li>
+<li>Cardio Area</li>
+<li>Strength Equipment</li>
+<li>Locker Facility</li>
+</ul>
+
+<a href="#contact" class="btn">
+JOIN NOW
+</a>
+
+</div>
+
+
+<div class="plan featured">
+
+<h3>3 MONTHS</h3>
+
+<div class="price">
+₹3,499 <span>/ 3 months</span>
+</div>
+
+<ul>
+<li>Full Gym Access</li>
+<li>Cardio & Strength</li>
+<li>Fitness Assessment</li>
+<li>Locker Facility</li>
+<li>Basic Trainer Guidance</li>
+</ul>
+
+<a href="#contact" class="btn">
+JOIN NOW
+</a>
+
+</div>
+
+
+<div class="plan">
+
+<h3>12 MONTHS</h3>
+
+<div class="price">
+₹9,999 <span>/ year</span>
+</div>
+
+<ul>
+<li>Unlimited Gym Access</li>
+<li>All Equipment</li>
+<li>Fitness Assessment</li>
+<li>Trainer Guidance</li>
+<li>Locker Facility</li>
+</ul>
+
+<a href="#contact" class="btn">
+JOIN NOW
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TRAINERS -->
+
+<section id="trainers">
+
+<div class="section-title">
+
+<div class="small-title">
+MEET THE TEAM
+</div>
+
+<h2>Our Trainers</h2>
+
+<p>
+Experienced coaches ready to help you train smarter.
+</p>
+
+</div>
+
+
+<div class="trainers">
+
+<div class="trainer">
+
+<div class="trainer-photo">
+🏋️
+</div>
+
+<div class="trainer-info">
+
+<h3>Rahul Sharma</h3>
+
+<p>
+Strength & Muscle Building Coach
+</p>
+
+</div>
+
+</div>
+
+
+<div class="trainer">
+
+<div class="trainer-photo">
+💪
+</div>
+
+<div class="trainer-info">
+
+<h3>Arjun Verma</h3>
+
+<p>
+Personal Training Coach
+</p>
+
+</div>
+
+</div>
+
+
+<div class="trainer">
+
+<div class="trainer-photo">
+🔥
+</div>
+
+<div class="trainer-info">
+
+<h3>Vikas Singh</h3>
+
+<p>
+Fat Loss & Conditioning Coach
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FACILITIES -->
+
+<section>
+
+<div class="section-title">
+
+<div class="small-title">
+OUR GYM
+</div>
+
+<h2>Facilities</h2>
+
+</div>
+
+
+<div class="facilities">
+
+<div class="facility">
+<h3>🏋️ Modern Equipment</h3>
+<p>Quality strength and cardio equipment for complete workouts.</p>
+</div>
+
+<div class="facility">
+<h3>🚿 Changing Rooms</h3>
+<p>Clean and comfortable changing facilities for members.</p>
+</div>
+
+<div class="facility">
+<h3>🔒 Locker Facility</h3>
+<p>Secure storage space for your personal belongings.</p>
+</div>
+
+<div class="facility">
+<h3>❄️ Air Conditioned</h3>
+<p>Comfortable training environment throughout the year.</p>
+</div>
+
+<div class="facility">
+<h3>🧼 Hygiene Focus</h3>
+<p>Regular cleaning and maintenance of the workout area.</p>
+</div>
+
+<div class="facility">
+<h3>🎵 Motivating Environment</h3>
+<p>High-energy atmosphere to keep you focused.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section style="background:#111">
+
+<div class="section-title">
+
+<div class="small-title">
+INSIDE THE GYM
+</div>
+
+<h2>Gallery</h2>
+
+<p>
+Replace these demo blocks with the customer's real gym photos.
+</p>
+
+</div>
+
+
+<div class="gallery">
+
+<div class="gallery-item">🏋️</div>
+<div class="gallery-item">💪</div>
+<div class="gallery-item">🚴</div>
+<div class="gallery-item">🥊</div>
+<div class="gallery-item">🏃</div>
+<div class="gallery-item">🔥</div>
+<div class="gallery-item">🧘</div>
+<div class="gallery-item">🏆</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about">
+
+<div>
+
+<div class="small-title">
+ABOUT THE BODY FOX
+</div>
+
+<h2>
+More Than A Gym.
+It's A Community.
+</h2>
+
+<p>
+We believe fitness is not just about how you look. It's about becoming stronger, healthier and more confident every day.
+</p>
+
+<p>
+Our team is here to help you stay consistent and make progress.
+</p>
+
+<a href="#contact" class="btn">
+START YOUR JOURNEY
+</a>
+
+</div>
+
+
+<div>
+
+<div class="check">
+<span>✓</span> Professional trainers
+</div>
+
+<div class="check">
+<span>✓</span> Modern fitness equipment
+</div>
+
+<div class="check">
+<span>✓</span> Personalized guidance
+</div>
+
+<div class="check">
+<span>✓</span> Flexible membership plans
+</div>
+
+<div class="check">
+<span>✓</span> Clean training environment
+</div>
+
+<div class="check">
+<span>✓</span> Friendly fitness community
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="section-title">
+
+<div class="small-title">
+GET IN TOUCH
+</div>
+
+<h2>Start Today</h2>
+
+<p>
+Have questions about membership? Contact us.
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-box">
+
+<h3>Visit The Gym</h3>
+
+<div class="contact-item">
+<strong>📍 ADDRESS</strong>
+<span>
+469-A, Shalimar Garden Extension-1,<br>
+Sahibabad, Ghaziabad, Uttar Pradesh 201005
+</span>
+</div>
+
+<div class="contact-item">
+<strong>📞 PHONE</strong>
+<span>
++91 88600 26615
+</span>
+</div>
+
+<div class="contact-item">
+<strong>🕐 TIMINGS</strong>
+<span>
+Monday – Saturday: 5:00 AM – 11:00 PM<br>
+Sunday: 6:00 AM – 12:00 PM
+</span>
+</div>
+
+<a
+href="https://wa.me/918860026615"
+class="btn"
+target="_blank">
+WHATSAPP US
+</a>
+
+</div>
+
+
+<div class="contact-box">
+
+<h3>Membership Enquiry</h3>
+
+<form onsubmit="sendWhatsApp(event)">
+
+<input
+id="name"
+type="text"
+placeholder="Your Name"
+required>
+
+<input
+id="phone"
+type="tel"
+placeholder="Phone Number"
+required>
+
+<select id="plan">
+
+<option>1 Month Membership</option>
+<option>3 Months Membership</option>
+<option>12 Months Membership</option>
+<option>Personal Training</option>
+
+</select>
+
+<textarea
+id="message"
+placeholder="Your message"></textarea>
+
+<button type="submit">
+SEND ENQUIRY ON WHATSAPP
+</button>
+
+</form>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 <strong>THE BODY FOX GYM & WELLNESS</strong>
+</p>
+
+<p>
+Demo website created for local business presentation.
+</p>
+
+</footer>
+
+
+<script>
+
+function sendWhatsApp(event){
+
+event.preventDefault();
+
+let name =
+document.getElementById("name").value;
+
+let phone =
+document.getElementById("phone").value;
+
+let plan =
+document.getElementById("plan").value;
+
+let message =
+document.getElementById("message").value;
+
+let text =
+"Hello The Body Fox Gym!%0A%0A" +
+"Name: " + encodeURIComponent(name) +
+"%0APhone: " + encodeURIComponent(phone) +
+"%0AMembership: " + encodeURIComponent(plan) +
+"%0AMessage: " + encodeURIComponent(message);
+
+window.open(
+"https://wa.me/918860026615?text=" + text,
+"_blank"
+);
+
+}
+
+</script>
+
+</body>
+</html>
